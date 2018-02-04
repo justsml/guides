@@ -1,3 +1,5 @@
+// TODO: INSTALL PRE-REQS: `npm install express cors body-parser morgan monk`
+
 const http        = require('http')
 const express     = require('express')
 const bodyParser  = require('body-parser')
