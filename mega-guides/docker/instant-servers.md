@@ -1,6 +1,6 @@
 # Commands for Quick Docker Servers
 
-### MySQL
+## MySQL
 
 ```sh
 # CRITICAL TODO: CHANGE PASSWORD!!!
@@ -8,9 +8,20 @@ docker run -d -p 3306:3306 --name mysql-$USER -e MYSQL_DATABASE=db-$USER -e MYSQ
 ```
 
 
-### MongoDB
+## MongoDB
 
+#### Keep data in container volume
 
+```sh
+docker run --name mongodb -p 127.0.0.1:27017:27017 -d mongo:latest bash -c 'mongod --logappend --storageEngine=wiredTiger'
+```
+
+#### Keep data in 'mounted volume/path' at `$HOME/mongodb`
+
+```sh
+mkdir -p $HOME/mongodb/data
+docker run -v $HOME/mongodb:/data --name mongodb -p 27017:27017 -d mongo:latest bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
+```
 
 ### Postgres
 
