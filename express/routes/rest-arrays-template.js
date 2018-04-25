@@ -18,11 +18,13 @@ function getOne(req, res, next) {
   if (!item) return next({ status: 404, message: 'Item not found.' })
   res.status(200).json({ data: item })
 }
+
 function create(req, res, next) {
   const data = {...req.body, id: (Math.random() * 1000000)}
   items.push(data)
   res.status(201).json({ data })
 }
+
 function update(req, res, next) {
   const { id } = req.params
   const previous = items.findIndex(item => item.id === id)
