@@ -16,6 +16,7 @@ gifsicle -i ./input.gif --resize-fit-width 960 > ./output-960px-width.gif
 
 ## Single Screenshot
 
-1. OSX: Cmd+Ctrl+Shift to draw a region & add to your clipboard.
+1. OSX: Cmd+Ctrl+Shift+4 to draw a region & add to your clipboard.
+    * Move selection by pressing *SPACEBAR* WHILE holding down shortcut keys.
 1. [Add OSX Shortcut to Linux](https://gist.github.com/justsml/74dc77c6278617e093d6)
 
