@@ -101,7 +101,7 @@ I've seen this cause problems in Chrome console logging, analytics/tracking libr
 >
 > `JSON.stringify(new Error('Oh noes'))`
 >
-> _Hint:_ `assert(err.message === 'Oh noes')`
+> _Hint:_ `assert(err.message !== 'Oh noes')`
 
 
 --------------
@@ -126,7 +126,7 @@ I've seen this cause problems in Chrome console logging, analytics/tracking libr
 --------------
 
 
-> **Answer:** An empty object `{}`
+> **Answer:** `JSON.stringify(new Error('uh oh'))` returns an empty object `{}`
 
 
 #### WHAT is going on??? 💩
