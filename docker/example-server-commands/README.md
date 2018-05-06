@@ -1,19 +1,30 @@
 # Commands for Quick Docker Servers
 
+* [MongoDB](#mongodb)
+* [Postgres](#postgres)
+* [Mysql](#mysql)
+* [ElasticSearch](#elasticsearch)
 
 ## MongoDB
 
 #### Keep data in container volume
 
 ```sh
-docker run --name mongodb -p 127.0.0.1:27017:27017 -d mongo:3 bash -c 'mongod --logappend --storageEngine=wiredTiger'
+docker run -d \
+  --name mongodb \
+  -p 127.0.0.1:27017:27017 \
+  mongo:3 bash -c 'mongod --logappend --storageEngine=wiredTiger'
 ```
 
 #### Keep data in 'mounted volume/path' at `$HOME/mongodb`
 
 ```sh
 mkdir -p $HOME/mongodb/data
-docker run -v $HOME/mongodb:/data --name mongodb -p 127.0.0.1:27017:27017 -d mongo:3 bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
+docker run -d \
+  -v $HOME/mongodb:/data \
+  --name mongodb \
+  -p 127.0.0.1:27017:27017 \
+  mongo:3 bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
 ```
 
 ## Postgres
@@ -56,14 +67,26 @@ psql # should work
 
 ```sh
 # CRITICAL TODO: CHANGE PASSWORD!!!
-docker run -d -p 127.0.0.1:3306:3306 --name mysql-$USER -e MYSQL_DATABASE=$USER -e MYSQL_ROOT_HOST='172.*.*.*' -e MYSQL_ROOT_PASSWORD='p@ssw0rd' mysql/mysql-server:5.7
+docker run -d \
+  -p 127.0.0.1:3306:3306 \
+  --name mysql-$USER \
+  -e MYSQL_DATABASE=$USER \
+  -e MYSQL_ROOT_HOST='172.*.*.*' \
+  -e MYSQL_ROOT_PASSWORD='p@ssw0rd' \
+  mysql/mysql-server:5.7
 ```
 
 
 ## ElasticSearch
 
-
-
+```sh
+docker run -d \
+  --name elastic01 \
+  -p 127.0.0.1:9200:9200 \
+  -p 127.0.0.1:9300:9300 \
+  -v /elastic:/data \
+  elasticsearch bash -c 'elasticsearch --cluster.name es_cluster --node.name elastic01 --path.data /data/db --path.logs /data/logs '
+```
 
 
 
