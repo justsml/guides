@@ -5,9 +5,9 @@
 
 >**Includes optimized defaults: CORS, logging & error handling!**
 
-1. Install NPM Packages
-2. Copy `app.js` into your project
-3. Create Express Router Module(s)
+1. [Install NPM Packages](#1-install-npm-packages)
+2. [Copy `app.js` into your project](#2-copy-appjs-into-your-project)
+3. [Create Express Router Module\(s\)](#3a-d-create-express-router-modules)
 
 
 ### 1. Install NPM Packages

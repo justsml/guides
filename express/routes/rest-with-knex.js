@@ -1,4 +1,6 @@
-// IMPORTANT: CHECK `TODO` NOTICES BELOW FILE!!!
+// From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+
+// IMPORTANT: CHECK `TODO` NOTICES BELOW!!!
 
 // TODO: Import KNEX CONNECTION OBJECT
 const knex = require('../db/knex') // TODO: Adjust path as needed!
@@ -60,8 +62,8 @@ function update(req, res, next) {
   knex('items')
     .where({id: req.params.id})
     .update(req.body)
-    .then(count => count >= 1 
-      ? res.status(200).json({ data: req.body }) 
+    .then(count => count >= 1
+      ? res.status(200).json({ data: req.body })
       : res.status(410).json())
     .catch(next)
 }
@@ -70,8 +72,8 @@ function remove(req, res, next) {
   // TODO: Validate authentication
   knex('items').where({id: req.params.id})
     .delete()
-    .then(count => count >= 1 
-      ? res.status(204).json() 
+    .then(count => count >= 1
+      ? res.status(204).json()
       : res.status(404).json({message: 'Nothing deleted!'}))
     .catch(next)
 }

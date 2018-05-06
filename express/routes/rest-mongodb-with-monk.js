@@ -1,4 +1,6 @@
-// CHECK `TODO` NOTICES BELOW FILE!!!
+// From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+
+// IMPORTANT: CHECK `TODO` NOTICES BELOW!!!
 
 // TODO: Move data layer to different module
 const connString = 'localhost/mydb' // TODO: Add env vars
