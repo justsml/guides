@@ -1,14 +1,17 @@
-/*
-In ruby you can check for null with `?` 
-e.g. option.answers[0]?.correct
+# Avoiding null errors
 
-In JS you can avoid this issue in many ways.
+In ruby you can check for null with `?`
+e.g. `option.answers[0]?.correct`
 
-The 2 techniques I find most helpful are:
-1. Ugly `&&` chain
-2. Avoid accessing anything by index! Use Array methods + functions (partial solution)
-*/
+*Currently (as of 2018) you can avoid this issue in JavaScript in a couple of ways.*
 
+The 2 techniques I find most helpful:
+
+1. Ugly `&&` chain, (tried & true)
+2. Avoid accessing anything by \[*index*\]! Use Array methods + functions (partial solution)
+
+
+```js
 // Example object:
 const submission = {
   studentId: 123,
@@ -19,14 +22,21 @@ const submission = {
     {id: 4, correct: false, value: 41},
   ]
 }
+```
 
-// Option #1:
+### Option #1:
+
+```js
 var correct = submission && submission.answers && submission.answers[0] && submission.answers[0].correct
 // Yikes - but never gets null errors!
 
-// Option #2
+```
+
+### Option #2
+
+```js
 // Lets improve this...
-// Say we really needed to return the answers which are `correct` 
+// Say we really needed to return the answers which are `correct`
 
 // Helper functions:
 // getAnswers uses an empty object in the destructuring, and when it returns the `answers` key's value it falls back to an empty array
@@ -40,15 +50,15 @@ getAnswers(submission)
 // Bazinga!!!!!
 
 
-// The neat thing about writing little utility functions like `getCorrect` is you can 
+// The neat thing about writing little utility functions like `getCorrect` is you can
 // use it in many cool ways:
 const firstCorrectAnswer = getAnswers(submission).find(getCorrect) // See MDN [].find docs
 const isPerfect = getAnswers(submission).every(getCorrect) // ALWAYS will be true or false
-const hasCorrectAnswer = getAnswers(submission).some(getCorrect) // " Short-circuits like find
+const hasCorrectAnswer = getAnswers(submission).some(getCorrect) // Short-circuits like Array.find()
 
 
 /*
-Now lets say you get an array of submissions, how can we build on our existing code? 
+Now lets say you get an array of submissions, how can we build on our existing code?
 */
 const correctAnswers = submissions.map(submission => getAnswers(submission).filter(getCorrect))
 
@@ -57,7 +67,7 @@ const scoredSubmissions = submissions.map(submission => {
   const answers = getAnswers(submission)
   const correct = answers.filter(getCorrect)
   // Create a clone/fresh object
-  return {...submission, 
+  return {...submission,
     score: correct.length / answers.length // set the score
   }
 })
@@ -68,10 +78,10 @@ const scoredSubmissions = submissions.map(scoreSubmission)
 function scoreSubmission(submission) {
   const answers = getAnswers(submission)
   const correct = answers.filter(getCorrect)
-  return {...submission,                   
+  return {...submission,
     score: correct.length / answers.length // set the score
   }
 }
-
+```
 
 

@@ -1,5 +1,13 @@
 # Tooling for GIFs
 
+## Record your Screen
+
+1. [Kap](https://getkap.co/) - Great Open source GIF recorder (OSX only currently)
+1. [Licecap](https://www.cockos.com/licecap/) - Basic util for Windows/OSX
+1. [OBS](https://obsproject.com/download) - All platform video recorder (will need to convert videos to GIFs)
+
+> **Important:** GIFs from these tools are often huge, see below to compress.
+
 ## How to Resize Animated GIFs w/ Compression
 
 > ImageMagick required: `[brew/apt] install imagemagick`
@@ -7,12 +15,6 @@
 ```sh
 gifsicle -i ./input.gif --resize-fit-width 960 > ./output-960px-width.gif
 ```
-
-## Record your Screen
-
-1. [Kap](https://getkap.co/) - Great Open source GIF recorder (OSX only currently)
-1. [Licecap](https://www.cockos.com/licecap/) - Basic util for Windows/OSX
-1. [OBS](https://obsproject.com/download) - All platform video recorder (will need to convert videos to GIFs)
 
 ## Single Screenshot
 

@@ -2,7 +2,7 @@
 
 #### Example Schemas:
 
-##### `models.js`
+##### `db/models.js`
 
 ```js
 const mongoose = require('mongoose');
@@ -14,7 +14,8 @@ const category = mongoose.Schema({
 
 // Articles schema
 const article = mongoose.Schema({
-  category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
+  // Relational lookup field
+  category: { ref: 'Category', type: mongoose.Schema.Types.ObjectId },
   title: String
 });
 
@@ -24,12 +25,13 @@ mongoose.model('Category', category);
 module.exports = {article, category};
 ```
 
-#### Example `seeds.js`
+#### Example `db/seeds.js`
 
 ```js
+const mongoose = require('mongoose');
 const ObjectId = mongoose.ObjectId;
-const Category = require('mongoose').model('Category');
-const Article  = require('mongoose').model('Article');
+const Category = mongoose.model('Category');
+const Article  = mongoose.model('Article');
 
 const techId = ObjectId()
 
@@ -54,4 +56,19 @@ Promise.all([
 
 
 
+## Setup Run Script
 
+Add a `db:seed` key to your `package.json` scripts section:
+
+```js
+  "scripts": {
+    "db:seed": "node ./db/seeds.js",
+    "test": "mocha"
+  }
+```
+
+To seed your mongodb, run this:
+
+```sh
+npm run db:seed
+```

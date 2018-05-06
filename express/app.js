@@ -1,7 +1,6 @@
-// TODO: INSTALL PRE-REQS: 
+// From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+// TODO: INSTALL PRE-REQS:
 //  npm install express cors body-parser morgan nodemon
-// Optional Extras: 
-//  npm install monk knex 
 const express     = require('express')
 const bodyParser  = require('body-parser')
 const morgan      = require('morgan')
@@ -17,7 +16,7 @@ app.use(cors({origin: true, credentials: true}))
 // app.use('/', express.static('./build'))
 
 // TODO: ADD (MOUNT) YOUR MIDDLEWARE (ROUTES) HERE:
-// Example: app.use('/api/kitten', require('./routes/kitten'))
+// Example: app.use('/api/cat', require('./routes/cat'))
 
 
 // These 2 `app.use` MUST be last `.use`'s
