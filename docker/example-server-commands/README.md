@@ -1,33 +1,66 @@
 # Commands for Quick Docker Servers
 
-## MySQL
-
-```sh
-# CRITICAL TODO: CHANGE PASSWORD!!!
-docker run -d -p 3306:3306 --name mysql-$USER -e MYSQL_DATABASE=db-$USER -e MYSQL_ROOT_HOST='172.*.*.*' -e MYSQL_ROOT_PASSWORD='p@ssw0rd' mysql/mysql-server:5.7
-```
-
 
 ## MongoDB
 
 #### Keep data in container volume
 
 ```sh
-docker run --name mongodb -p 127.0.0.1:27017:27017 -d mongo:latest bash -c 'mongod --logappend --storageEngine=wiredTiger'
+docker run --name mongodb -p 127.0.0.1:27017:27017 -d mongo:3 bash -c 'mongod --logappend --storageEngine=wiredTiger'
 ```
 
 #### Keep data in 'mounted volume/path' at `$HOME/mongodb`
 
 ```sh
 mkdir -p $HOME/mongodb/data
-docker run -v $HOME/mongodb:/data --name mongodb -p 27017:27017 -d mongo:latest bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
+docker run -v $HOME/mongodb:/data --name mongodb -p 127.0.0.1:27017:27017 -d mongo:3 bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
 ```
 
-### Postgres
+## Postgres
+
+#### Store data inside container volume
+
+```sh
+docker run -d \
+  --name postgresdb \
+  --restart on-failure:15 \
+  -p 127.0.0.1:5432:5432 \
+  -e POSTGRES_USER=$USER \
+  -e POSTGRES_DB=$USER \
+  -e POSTGRES_INITDB_ARGS="--data-checksums" \
+  postgres:9.6-alpine
+```
+
+**IMPORTANT:** If you see the following error, see fix below:
+
+```sh
+$ psql
+psql: could not connect to server: Socket operation on non-socket
+        Is the server running locally and accepting
+        connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+```
+
+To access server via your 'local' terminal and code: configure connection with the local address `127.0.0.1`
 
 
+```sh
+# Option 1: Explicitly set `--host` CLI argument
+createdb --host 127.0.0.1 foobar
 
-### ElasticSearch
+# Option 2: Set host for all postgres CLI tools via $PGHOST
+export PGHOST=127.0.0.1
+psql # should work
+```
+
+## MySQL
+
+```sh
+# CRITICAL TODO: CHANGE PASSWORD!!!
+docker run -d -p 127.0.0.1:3306:3306 --name mysql-$USER -e MYSQL_DATABASE=$USER -e MYSQL_ROOT_HOST='172.*.*.*' -e MYSQL_ROOT_PASSWORD='p@ssw0rd' mysql/mysql-server:5.7
+```
+
+
+## ElasticSearch
 
 
 
