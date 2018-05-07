@@ -5,7 +5,7 @@
 * [**docker**](https://github.com/justsml/guides/tree/master/docker)
     * [example-server-commands](https://github.com/justsml/guides/tree/master/docker/example-server-commands) start popular DB servers with 1-liners
 * [**express**](https://github.com/justsml/guides/tree/master/express)
-    * [**setup-guide**](https://github.com/justsml/guides/tree/master/express/setup-guide) 2 minute: REST server w/ 1-2 files
+    * [setup-guide](https://github.com/justsml/guides/tree/master/express/setup-guide) 2 minute: REST server w/ 1-2 files
 * [**javascript**](https://github.com/justsml/guides/tree/master/javascript)
     * [syntax-cheat-sheet](https://github.com/justsml/guides/tree/master/javascript/syntax-cheat-sheet) *JS real good*
     * [promises](https://github.com/justsml/guides/tree/master/javascript/promises) that never break
@@ -15,8 +15,8 @@
 * [**mapping**](https://github.com/justsml/guides/tree/master/mapping)
     * [google-geocoder](https://github.com/justsml/guides/tree/master/mapping/google-geocoder) address to lat & long (w/ promise constructor example)
 * [**mongodb**](https://github.com/justsml/guides/tree/master/mongodb) seed script
-    * [**mongoose-seeds**](https://github.com/justsml/guides/tree/master/mongodb/mongoose-seeds) mongoose seed script
-    * [**monk-seeds**](https://github.com/justsml/guides/tree/master/mongodb/monk-seeds) monk seed script
+    * [mongoose-seeds](https://github.com/justsml/guides/tree/master/mongodb/mongoose-seeds) mongoose seed script
+    * [monk-seeds](https://github.com/justsml/guides/tree/master/mongodb/monk-seeds) monk seed script
 * [**resources**](https://github.com/justsml/guides/tree/master/resources)
     * [online-editors](https://github.com/justsml/guides/tree/master/resources/online-editors) repls to full IDE (VS Code online)
     * [vs-code](https://github.com/justsml/guides/tree/master/resources/vs-code) tips, shortcuts and cheat sheet
