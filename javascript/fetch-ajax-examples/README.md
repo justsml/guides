@@ -134,7 +134,7 @@ postFile('http://example.com/api/v1/users', 'input[type="file"].avatar')
 function postFile(url, fileSelector) {
   const formData = new FormData()
   const fileField = document.querySelector(fileSelector)
-  
+
   formData.append('username', 'abc123')
   formData.append('avatar', fileField.files[0])
 
@@ -168,9 +168,9 @@ function postFile(url, fileSelector) {
 
   // Add all files to formData
   Array.prototype.forEach.call(fileFields.files, f => formData.append('files', f))
-  // Alternatively for PHP peeps, use `files[]` for the name to support arrays
+  // Alternatively for PHPeeps, use `files[]` for the name to support arrays
   // Array.prototype.forEach.call(fileFields.files, f => formData.append('files[]', f))
-  
+
   return fetch(url, {
     method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
     body: formData  // Coordinate the body type with 'Content-Type'

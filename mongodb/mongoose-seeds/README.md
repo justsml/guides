@@ -1,11 +1,25 @@
 ## Example Seeds Pattern for Mongodb/Mongoose
 
-#### Example Schemas:
+#### Recommended File/Folder Setup:
+
+##### `db/connection.js`
+
+```js
+const uri = process.env.MONGODB_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/testApp';
+const mongoose = require('mongoose');
+mongoose.connect(uri);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'mongodb connection error:'));
+db.once('open', console.info.bind(console, 'mongodb successfully connected:'));
+
+module.exports = {mongoose, db};
+```
 
 ##### `db/models.js`
 
 ```js
-const mongoose = require('mongoose');
+const {mongoose, db} = require('./connection');
 
 // Category Schema
 const category = mongoose.Schema({
@@ -28,7 +42,7 @@ module.exports = {article, category};
 #### Example `db/seeds.js`
 
 ```js
-const mongoose = require('mongoose');
+const {mongoose, db} = require('./connection');
 const ObjectId = mongoose.ObjectId;
 const Category = mongoose.model('Category');
 const Article  = mongoose.model('Article');
