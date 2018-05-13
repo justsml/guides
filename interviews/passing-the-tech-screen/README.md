@@ -50,7 +50,7 @@
 > `var` has looser rules, it's scope is the function (or global scope) where it is declared. Re-declaring a `var` simply overrides the value for that variable name for future references.
 
 1. What are anonymous functions?
-> 
+> Functions without a name.
 
 1. How do you define a global variable?
 1. How do you define a global variable inside of a function?
