@@ -39,9 +39,19 @@
 ## JavaScript
 
 1. What are `let` and `const`?
+> They ensure variables can only be created once per block scope. (block scope: fancy way of saying 'pairs of curly-braces'). 
+> Global `const`'s do not become properties of the `window` object, unlike `var` variables. 
+
 1. What is `var`?
+> The OG of JS variable declaration.
+
 1. How is `var` different than `let`?
+>  `let`'s scope is it's enclosing curly-brace block - wherever it was defined (e.g. `if/else`, `function`, `for`, `for in/of`, `while`, `do`, `{curly braced section/block}`). It can only be used once in each block.
+> `var` has looser rules, it's scope is the function (or global scope) where it is declared. Re-declaring a `var` simply overrides the value for that variable name for future references.
+
 1. What are anonymous functions?
+> 
+
 1. How do you define a global variable?
 1. How do you define a global variable inside of a function?
 1. What does IIFE (pronounced iffy) mean?
