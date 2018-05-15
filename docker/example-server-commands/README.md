@@ -21,13 +21,16 @@ docker run -d \
 ```sh
 mkdir -p $HOME/mongodb/data
 docker run -d \
-  -v $HOME/mongodb:/data \
   --name mongodb \
+  --restart on-failure:15 \
   -p 127.0.0.1:27017:27017 \
+  -v $HOME/mongodb:/data \
   mongo:3 bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
 ```
 
 ## Postgres
+
+> **Note:** To persist data in the host filesystem, add this `volume` option: `-v $HOME/postgres:/var/lib/postgresql/data/db`
 
 #### Store data inside container volume
 
@@ -36,6 +39,7 @@ docker run -d \
   --name postgresdb \
   --restart on-failure:15 \
   -p 127.0.0.1:5432:5432 \
+  -e PGDATA=/var/lib/postgresql/data/db \
   -e POSTGRES_USER=$USER \
   -e POSTGRES_DB=$USER \
   -e POSTGRES_INITDB_ARGS="--data-checksums" \
@@ -65,6 +69,8 @@ psql # should work
 
 ## MySQL
 
+> **CRITICAL TODO: CHANGE PASSWORD!!!**
+
 ```sh
 # CRITICAL TODO: CHANGE PASSWORD!!!
 docker run -d \
@@ -76,15 +82,31 @@ docker run -d \
   mysql/mysql-server:5.7
 ```
 
+#### Keep data in 'mounted' volume/path at `$HOME/mysql`
+
+> **CRITICAL TODO: CHANGE PASSWORD!!!**
+
+```sh
+mkdir -p $HOME/mysql
+docker run -d \
+  -v $HOME/mysql:/var/lib/mysql \
+  -p 127.0.0.1:3306:3306 \
+  --name mysql-$USER \
+  -e MYSQL_DATABASE=$USER \
+  -e MYSQL_ROOT_HOST='172.*.*.*' \
+  -e MYSQL_ROOT_PASSWORD='p@ssw0rd' \
+  mysql/mysql-server:5.7
+```
 
 ## ElasticSearch
 
 ```sh
+cd $HOME/elastic
 docker run -d \
   --name elastic01 \
   -p 127.0.0.1:9200:9200 \
   -p 127.0.0.1:9300:9300 \
-  -v /elastic:/data \
+  -v $HOME/elastic:/data \
   elasticsearch bash -c 'elasticsearch --cluster.name es_cluster --node.name elastic01 --path.data /data/db --path.logs /data/logs '
 ```
 

@@ -40,4 +40,4 @@ function errorHandler(err, req, res, next) {
 
 app.listen(port)
   .on('error',     console.error.bind(console))
-  .on('listening', console.log.bind(console, 'Listening on ' + port));
+  .on('listening', console.log.bind(console, 'Listening on ' + port))
