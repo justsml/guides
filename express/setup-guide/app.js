@@ -23,6 +23,7 @@ app.use(cors({origin: true, credentials: true}))
 app.use(notFound)
 app.use(errorHandler)
 
+// eslint-disable-next-line
 function notFound(req, res, next) {
   const url = req.originalUrl
   if (!/favicon\.ico$/.test(url) && !/robots\.txt$/.test(url)) {
@@ -32,6 +33,7 @@ function notFound(req, res, next) {
   res.status(404).send({error: 'Url not found', status: 404, url})
 }
 
+// eslint-disable-next-line
 function errorHandler(err, req, res, next) {
   console.error('ERROR', err)
   const stack =  process.env.NODE_ENV !== 'production' ? err.stack : undefined
