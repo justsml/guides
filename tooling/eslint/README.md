@@ -11,7 +11,7 @@
 Run from any folder location:
 
 ```sh
-npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
+npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-promise eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
 ```
 
 #### Locally (dev deps):
@@ -19,7 +19,7 @@ npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import esl
 In your project folder:
 
 ```sh
-npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
+npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-promise eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
 ```
 
 ## 2. Setup Config File(s)
@@ -35,15 +35,14 @@ To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the
 ```js
 {
   "extends": [
+    "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
     "prettier/react",
     "prettier/standard"
   ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": [ "react", "prettier", "promise" ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
@@ -55,32 +54,45 @@ To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the
   },
   "env": {
     "browser": true,
+    "commonjs": true,
     "es6": true,
-    "node": true
+    "mocha": true,
+    "node": true,
+  },
+  "globals": {
+    "cy": true,
+    "describe": true,
+    "it": true,
+    "test": true
   },
   "rules": {
-    "no-console": 0,
-    "comma-dangle": 0,
-    "handle-callback-err": [2, "^(err|error)$"],
+    "semi": ["error", "never"],
+    "comma-dangle": [1, "always-multiline"],
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+    "max-len": ["error", { "code": 120, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true }],
+    "array-bracket-newline": 0,
+    "array-element-newline": 0,
+    "operator-linebreak": [ "error", "after", { "overrides": { "?": "ignore", ":": "ignore" } } ],
+    "no-console": 1,
+    "prefer-destructuring": ["error", { "array": true, "object": true }, { "enforceForRenamedProperties": false }],
+    "handle-callback-err": [ 2, "^(err|error)$" ],
     "strict": 0,
-    "quotes": [1, "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
-    "indent": ["error", 2, {
-              "ignoredNodes": ["ConditionalExpression"],
-              "ignoreComments": true,
-              "MemberExpression": 1,
-              "ArrayExpression": "first",
-              "ObjectExpression": "first" }],
-    "key-spacing": ["error", {
-      "multiLine": {
-        "beforeColon": false,
-        "afterColon": true
-      },
-      "align": {
-        "beforeColon": false,
-        "afterColon": true,
-        "on": "value"
-      }
-    }]
+    "quotes": [ 1, "single", { "allowTemplateLiterals": true, "avoidEscape": true } ],
+    "no-unused-vars": ["warn", { "varsIgnorePattern": "next|err.*" }],
+    "prefer-promise-reject-errors": "error",
+    "no-throw-literal": 1,
+    "no-unreachable": 1,
+    "promise/always-return": 2,
+    "promise/no-return-wrap": 2,
+    "promise/param-names": 2,
+    "promise/catch-or-return": 2,
+    "promise/no-new-statics": 2,
+    "promise/no-nesting": 1,
+    "promise/no-promise-in-callback": 1,
+    "promise/no-callback-in-promise": 1,
+    "promise/avoid-new": 1,
+    "promise/no-return-in-finally": 1,
+    "promise/valid-params": 1
   }
 }
 ```
