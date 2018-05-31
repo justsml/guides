@@ -1,4 +1,6 @@
 // From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+// RESTful Router Template:
+const router = module.exports = require('express').Router();
 
 // IMPORTANT: CHECK `TODO` NOTICES BELOW!!!
 
@@ -6,9 +8,6 @@
 const connString = 'localhost/mydb' // TODO: Add env vars
 const db = require('monk')(connString)
 const items = db.get('items') // TODO: move, roughly like: app/db/items.js:
-
-// RESTful Router Template:
-const router = module.exports = require('express').Router();
 
 router.get('/',       getAll)
 router.get('/:id',    getOne)
@@ -33,6 +32,7 @@ function getOne(req, res, next) {
     })
     .catch(next)
 }
+
 function create(req, res, next) {
   // Basic parameter limiting example (w/ destructuring):
   // const { brand, name } = req.body
