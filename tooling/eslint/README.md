@@ -85,7 +85,7 @@ To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the
     "promise/always-return": 1,
     "promise/no-return-wrap": 1,
     "promise/param-names": 2,
-    "promise/catch-or-return": 2,
+    "promise/catch-or-return": 1,
     "promise/no-new-statics": 2,
     "promise/no-nesting": 1,
     "promise/no-promise-in-callback": 1,
