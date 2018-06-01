@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "plugins": [ "react", "prettier", "promise" ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "modules": true,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "mocha": true,
+    "node": true,
+  },
+  "globals": {
+    "cy": true,
+    "describe": true,
+    "it": true,
+    "test": true
+  },
+  "rules": {
+    "array-bracket-newline": 0,
+    "array-element-newline": 0,
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+    "comma-dangle": [1, "always-multiline"],
+    "handle-callback-err": [ 2, "^erro?r?$" ],
+    "max-len": ["error", { "code": 120, "tabWidth": 2, "ignoreComments": true, "ignoreUrls": true }],
+    "no-console": 0,
+    "no-throw-literal": 2,
+    "no-unreachable": 1,
+    "no-unused-vars": ["warn", { "args": "none" }],
+//  "no-unused-vars": ["warn", { "varsIgnorePattern": "(next)|(erro?r?)" }],
+    "operator-linebreak": [ "error", "after", { "overrides": { "?": "ignore", ":": "ignore" } } ],
+    "prefer-destructuring": ["error", { "array": true, "object": true }, { "enforceForRenamedProperties": false }],
+    "prefer-promise-reject-errors": 1,
+    "promise/always-return": 1,
+    "promise/avoid-new": 1,
+    "promise/catch-or-return": 1,
+    "promise/no-callback-in-promise": 1,
+    "promise/no-nesting": 1,
+    "promise/no-new-statics": 2,
+    "promise/no-promise-in-callback": 1,
+    "promise/no-return-in-finally": 1,
+    "promise/no-return-wrap": 1,
+    "promise/param-names": 2,
+    "promise/valid-params": 1
+    "quotes": [ 1, "single", { "allowTemplateLiterals": true, "avoidEscape": true } ],
+    "semi": ["error", "never"],
+    "strict": 0,
+  }
+}
