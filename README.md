@@ -24,3 +24,5 @@
     * [eslint](https://github.com/justsml/guides/tree/master/tooling/eslint) code auto-formatting setup guide
     * [screen-recording](https://github.com/justsml/guides/tree/master/tooling/screen-recording) free tools to create GIFs to live streaming
 
+
+by: Dan Levy @justsml
