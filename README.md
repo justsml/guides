@@ -6,6 +6,8 @@
     * [example-server-commands](https://github.com/justsml/guides/tree/master/docker/example-server-commands) start popular DB servers with 1-liners
 * [**express**](https://github.com/justsml/guides/tree/master/express)
     * [setup-guide](https://github.com/justsml/guides/tree/master/express/setup-guide) 2 minute: REST server w/ 1-2 files
+* [**interviews**](https://github.com/justsml/guides/tree/master/interviews)
+    * [Passing the tech screen](https://github.com/justsml/guides/tree/master/interviews/passing-the-tech-screen)
 * [**javascript**](https://github.com/justsml/guides/tree/master/javascript)
     * [syntax-cheat-sheet](https://github.com/justsml/guides/tree/master/javascript/syntax-cheat-sheet) *JS real good*
     * [promises](https://github.com/justsml/guides/tree/master/javascript/promises) that never break
