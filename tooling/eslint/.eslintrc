@@ -55,8 +55,9 @@
     "promise/no-return-in-finally": 1,
     "promise/no-return-wrap": 1,
     "promise/param-names": 2,
-    "promise/valid-params": 1
+    "promise/valid-params": 1,
     "quotes": [ 1, "single", { "allowTemplateLiterals": true, "avoidEscape": true } ],
+    "react/prop-types": 0,
     "semi": ["error", "never"],
     "strict": 0,
   }
