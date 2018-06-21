@@ -1,4 +1,6 @@
-# guides, cheat sheets and examples
+# Guides, Cheat Sheets and Examples
+
+**By:** [Dan Levy](http://www.danlevy.net/) follow me on twitter: [@justsml](https://twitter.com/justsml)
 
 ## Overview
 
@@ -27,4 +29,3 @@
     * [screen-recording](https://github.com/justsml/guides/tree/master/tooling/screen-recording) free tools to create GIFs to live streaming
 
 
-by: Dan Levy @justsml
