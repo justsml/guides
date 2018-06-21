@@ -1,4 +1,6 @@
-# guides, cheat sheets and examples
+# Guides, Cheat Sheets and Examples
+
+**By:** [Dan Levy](http://www.danlevy.net/) follow me on twitter: [@justsml](https://twitter.com/justsml)
 
 ## Overview
 
@@ -6,6 +8,8 @@
     * [example-server-commands](https://github.com/justsml/guides/tree/master/docker/example-server-commands) start popular DB servers with 1-liners
 * [**express**](https://github.com/justsml/guides/tree/master/express)
     * [setup-guide](https://github.com/justsml/guides/tree/master/express/setup-guide) 2 minute: REST server w/ 1-2 files
+* [**interviews**](https://github.com/justsml/guides/tree/master/interviews)
+    * [Passing the tech screen](https://github.com/justsml/guides/tree/master/interviews/passing-the-tech-screen)
 * [**javascript**](https://github.com/justsml/guides/tree/master/javascript)
     * [syntax-cheat-sheet](https://github.com/justsml/guides/tree/master/javascript/syntax-cheat-sheet) *JS real good*
     * [promises](https://github.com/justsml/guides/tree/master/javascript/promises) that never break
@@ -23,4 +27,5 @@
 * [**tooling**](https://github.com/justsml/guides/tree/master/tooling)
     * [eslint](https://github.com/justsml/guides/tree/master/tooling/eslint) code auto-formatting setup guide
     * [screen-recording](https://github.com/justsml/guides/tree/master/tooling/screen-recording) free tools to create GIFs to live streaming
+
 
