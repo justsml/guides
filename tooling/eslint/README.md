@@ -11,7 +11,7 @@
 Run from any folder location:
 
 ```sh
-npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
+npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier eslint-plugin-promise
 ```
 
 #### Locally (dev deps):
@@ -19,14 +19,14 @@ npm install -g eslint babel-eslint eslint-config-airbnb eslint-plugin-import esl
 In your project folder:
 
 ```sh
-npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier
+npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-prettier eslint-plugin-prettier prettier eslint-plugin-promise
 ```
 
 ## 2. Setup Config File(s)
 
 Instead of running `eslint --init`, I recommend copying the [sample `.eslintrc` file](#sample-eslintrc) into your `$HOME` folder.
 
-To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the project's root folder. 
+To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the project's root folder.
 
 [Modify *rules* as needed.](https://eslint.org/docs/rules/)
 
