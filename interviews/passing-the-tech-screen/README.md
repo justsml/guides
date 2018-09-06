@@ -3,10 +3,14 @@
 ## CSS
 
 1. What are CSS selectors?
-1. What is the specificity of those selectors?
-1. What is the difference between `.class1.class2` and `.class1 .class2` as a selector?
+1. What is selector specificity?
+1. What is the difference between selectors `.class1.class2` and `.class1 .class2`?
+1. How about these selectors `.class1 .class2` and `.class1 > .class2`?
+1. And these selectors `.header .nav a` and `.header a`?
 1. How do you center something in CSS?
-1. How do floats work?
+1. What is SASS/LESS/Stylus/etc?
+1. What is component based SCSS/CSS? 
+1. ~~How do floats work?~~
 1. How do you get something to not display using CSS?
 1. Why would you use Flexbox or CSS Grid?
 
@@ -19,12 +23,14 @@
 1. How do you define a global variable?
 1. How do you define a global variable inside of a function?
 1. What does IIFE (pronounced iffy) mean?
+1. What is a higher order function?
+1. Why are functions in JavaScript 'first class'?
 1. What's a closure?
-1. How does event bubbling work?
-1. How do you avoid event bubbling?
 1. What is the difference between `==` and `===`?
 1. What is the difference between `null` and `undefined`?
 1. What are the primitive data types?
+1. How does event bubbling work?
+1. How do you avoid event bubbling?
 
 ## React:
 
