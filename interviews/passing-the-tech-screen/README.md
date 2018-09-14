@@ -4,7 +4,7 @@
 
 1. What are CSS selectors?
 1. What is selector specificity?
-1. What is the difference between selectors `.class1.class2` and `.class1 .class2`?
+1. What is the difference between selectors `.class1.class2` and `.class1 .class2` (space added)?
 1. How about these selectors `.class1 .class2` and `.class1 > .class2`?
 1. And these selectors `.header .nav a` and `.header a`?
 1. How do you center something in CSS?
@@ -16,9 +16,13 @@
 
 ## JavaScript
 
+1. Where can you use JS?
+1. What is NodeJS?
+1. Does it have/use types?
+1. Name 2 or more ES6 features.
 1. What are `let` and `const`?
 1. What is `var`?
-1. How is `var` different than `let`?
+1. How is `var` different than `const`?
 1. What are anonymous functions?
 1. How do you define a global variable?
 1. How do you define a global variable inside of a function?
@@ -40,9 +44,9 @@
 1. What is the difference between state and props?
 1. Can you set state more than once?
 1. How does React use the virtual DOM?
-1. What are the benefits of `css-in-js`?
-1. When would you use Redux and `this.setState({...})`?
+1. What are the pros/cons w/ `css-in-js`?
 1. Why do we typically need to use babel?
+1. When would you use Redux and `this.setState({...})`?
 1. What problem(s) does `Redux` solve?
 1. What is the Context API?
 
