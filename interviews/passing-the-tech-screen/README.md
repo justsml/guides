@@ -34,7 +34,7 @@
 
 ## React:
 
-1. What is the one lifecycle hook that is in every class component?
+1. What is one lifecycle hook that is in every class component?
 1. Name as many lifecycle hooks as you can?
     1. Bonus: Name the deprecated hooks.
 1. What is the difference between state and props?
@@ -44,6 +44,24 @@
 1. When would you use Redux and `this.setState({...})`?
 1. Why do we typically need to use babel?
 1. What problem(s) does `Redux` solve?
+1. What is the Context API?
+
+## Vue.JS:
+
+1. Name 2+ lifecycle methods?
+1. Do components need templates?
+1. What is `v-bind:` for?
+1. How do you use props?
+1. What are watches for?
+1. What are computed methods?
+1. Why/when should data be a function?
+1. What is `v-model`? What does it affect?
+1. How do you deploy/use `.vue` files?
+1. How do you prevent default with an `v-on:click`/`@click=`?
+1. Where should a component's logic/functions live?
+1. What is reactivity in Vue?
+1. Describe Vuex & and it's use case(s).
+1. How is it similar to React? Different?
 
 
 ---------------
