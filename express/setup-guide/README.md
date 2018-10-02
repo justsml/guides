@@ -1,31 +1,61 @@
 # Quickly Setup an Express Server
 ## In only 3 steps!
 
+### What's included?
+
+* RESTful **express server** with **less cruft** than any 'generator'.
+* **Includes optimized defaults:** CORS, logging & error handling!
+
+> Setup Options:
+
+1. [Video](#video): 'Live coding' getting setup - ~2 min.
+1. [Cheat](#cheat): tl;dr automated shell script
+1. [Instructions](#instructions): 3 steps described
+
+### Video
+
 [Watch Video on @justsml's Channel](https://www.youtube.com/watch?v=3pMLGK_EKxE)
 
 [![Watch Video on @justsml's Channel](https://img.youtube.com/vi/3pMLGK_EKxE/0.jpg)](https://www.youtube.com/watch?v=3pMLGK_EKxE)
 
-> Setup an **express server** with **less cruft** than any 'generator'.
+### Cheat
 
->**Includes optimized defaults: CORS, logging & error handling!**
+A shell script for the impatient:
+
+> RECOMMENDED: Create an empty folder for your express server & `cd <server-path>` into it before running the script.
+
+```sh
+echo "###### @justsml's express template #######"
+[ ! -f ./app.js ] && curl -Ssl -o ./app.js https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/app.js
+echo '### basic app.js server setup...'
+
+[ ! -f ./package.json ] && npm init -y
+npm install express cors body-parser morgan nodemon
+echo '### added dependencies...'
+
+echo "### starting app.js - NOTE: don't forget to setup your routes"
+./node_modules/.bin/nodemon app.js
+```
+
+### Instructions
 
 1. [Install NPM Packages](#1-install-npm-packages)
 2. [Copy `app.js` into your project](#2-copy-appjs-into-your-project)
 3. [Create Express Router Module\(s\)](#3a-d-create-express-router-modules)
 
 
-### 1. Install NPM Packages
+#### 1. Install NPM Packages
 
 ```sh
 # In folder w/ package.json:
 npm install express cors body-parser morgan nodemon
 ```
 
-### 2. Copy `app.js` into your project
+#### 2. Copy `app.js` into your project
 
 [Get the `app.js` file](./app.js) and copy it to your project.
 
-### 3a-d. Create Express Router Module(s)
+#### 3a-d. Create Express Router Module(s)
 
 **This is the preferred way to implement paths like `/api/dog/` and `/api/cat/`.**
 
