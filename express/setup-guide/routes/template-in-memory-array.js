@@ -1,4 +1,4 @@
-// From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+// From Dan's Guides: https://github.com/justsml/guides/tree/master/express/setup-guide
 const router = module.exports = require('express').Router();
 
 const items = [] // in-memory 'dummy data source'
