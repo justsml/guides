@@ -25,16 +25,11 @@ A shell script for the impatient:
 > RECOMMENDED: Create an empty folder for your express server & `cd <server-path>` into it before running the script.
 
 ```sh
-echo "###### @justsml's express template #######"
-[ ! -f ./app.js ] && curl -Ssl -o ./app.js https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/app.js
-echo '### basic app.js server setup...'
+# Create an app.js
+curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-setup.sh | bash
 
-[ ! -f ./package.json ] && npm init -y
-npm install express cors body-parser morgan nodemon
-echo '### added dependencies...'
-
-echo "### starting app.js - NOTE: don't forget to setup your routes"
-./node_modules/.bin/nodemon app.js
+# Add a route (will prompt user for route name & template type)
+curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-create-route.sh | bash
 ```
 
 ### Instructions
