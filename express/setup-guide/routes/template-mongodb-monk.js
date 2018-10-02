@@ -1,4 +1,4 @@
-// From Dan's Guides: https://github.com/justsml/guides/tree/master/express
+// From Dan's Guides: https://github.com/justsml/guides/tree/master/express/setup-guide
 // RESTful Router Template:
 const router = module.exports = require('express').Router();
 
