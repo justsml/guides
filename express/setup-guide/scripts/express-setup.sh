@@ -9,7 +9,8 @@ echo '### basic app.js server setup...'
 npm install express cors body-parser morgan nodemon
 echo '### added dependencies...'
 
-echo "### starting app.js..."
-./node_modules/.bin/nodemon app.js
+# echo "### start app.js..."
+# ./node_modules/.bin/nodemon app.js
 echo "###=> TODO: don't forget to setup your routes & package.json 'start script'"
-sleep 5s
+echo "###=> TODO: add 'start' script to your package.json!"
+sleep 1s
