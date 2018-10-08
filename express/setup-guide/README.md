@@ -10,7 +10,7 @@
 
 1. [Video](#video): 'Live coding' getting setup - ~2 min.
 1. [Cheat](#cheat): tl;dr automated shell script
-1. [Instructions](#instructions): 3 steps described
+1. [Instructions](#instructions): 3 manual steps
 
 ### Video
 
@@ -20,16 +20,31 @@
 
 ### Cheat
 
-A shell script for the impatient:
+2 shell scripts for the impatient: an express `app.js` generator `~/express-setup.sh`. And a route generator, with multiple choice and naming `~/express-create-route.sh`.
 
 > RECOMMENDED: Create an empty folder for your express server & `cd <server-path>` into it before running the script.
 
-```sh
-# Create an app.js
-curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-setup.sh | bash
+#### Download scripts:
 
-# Add a route (will prompt user for route name & template type)
-curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-create-route.sh | bash
+```sh
+# Download script to create an app.js
+curl -o ~/express-setup.sh -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-setup.sh
+# Download script to add a route (will prompt user for route name & template type)
+curl -o ~/express-create-route.sh -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-create-route.sh
+# Set permission
+chmod a+x ~/express-*.sh
+```
+
+You're now setup with 2 local scripts. Each time you want to create an app, run the following commands:
+
+```js
+# create a director, cd into it
+mkdir ~/my-app
+cd ~/my-app
+# Create the app.js
+~/express-setup.sh
+# Add a route
+~/express-create-route.sh
 ```
 
 ### Instructions
