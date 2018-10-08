@@ -55,11 +55,12 @@
 1. Name 2+ lifecycle methods?
 1. Do components need templates?
 1. What is `v-bind:` for?
+1. What is `v-model`? What does it affect?
 1. How do you use props?
 1. What are watches for?
 1. What are computed methods?
+1. How do you render conditionally?
 1. Why/when should data be a function?
-1. What is `v-model`? What does it affect?
 1. How do you deploy/use `.vue` files?
 1. How do you prevent default with an `v-on:click`/`@click=`?
 1. Where should a component's logic/functions live?
