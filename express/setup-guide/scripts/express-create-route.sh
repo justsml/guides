@@ -27,7 +27,7 @@ mkdir -p ./routes
 
 curl -Ssl -o "./routes/${route_name}.js" $selected_template
 
-sed -i "s/item/${route_name}/" "./routes/${route_name}.js"
+sed -i "s/item/${route_name}/g" "./routes/${route_name}.js"
 
 printf "\\n\\n [downloaded template]\\n"
 printf "\\n [patched variables]\\n\\n"
