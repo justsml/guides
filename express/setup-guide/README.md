@@ -28,9 +28,9 @@
 
 ```sh
 # Download script to create an app.js
-curl -o ~/express-setup.sh -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-setup.sh
+curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-setup.sh > ~/express-setup.sh
 # Download script to add a route (will prompt user for route name & template type)
-curl -o ~/express-create-route.sh -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-create-route.sh
+curl -o- -L https://raw.githubusercontent.com/justsml/guides/master/express/setup-guide/scripts/express-create-route.sh > ~/express-create-route.sh
 # Set permission
 chmod a+x ~/express-*.sh
 ```
