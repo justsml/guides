@@ -1,5 +1,12 @@
 # Tech Screen Interview Questions
 
+## Data Structures
+
+1. Name a linear data structure.
+1. What are common use cases for Trees?
+1. How do you determine the length of a single-linked list?
+
+
 ## CSS
 
 1. What are CSS selectors?
