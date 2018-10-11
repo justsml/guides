@@ -5,6 +5,11 @@
 1. Name a linear data structure.
 1. What are common use cases for Trees?
 1. How do you determine the length of a single-linked list?
+1. How are arrays and single-linked lists similar? Different?
+1. What is a hash data structure?
+1. What type of tree limits 'connections' by 2 nodes?
+1. What is a tuple?
+
 
 
 ## CSS
