@@ -50,10 +50,10 @@ cd ~/my-app
 ~/express-create-route.sh
 ```
 
-##### :tada: you're done!
+##### :tada: [Jump to # 3d to complete adding route(s)](#3d-enable-routes-in-appjs) in `app.js`!
 
 
-### Instructions
+### Manual Instructions
 
 1. [Install NPM Packages](#1-install-npm-packages)
 2. [Copy `app.js` into your project](#2-copy-appjs-into-your-project)
@@ -153,6 +153,7 @@ Server will print the port it's listening on (default is 3000).
 Override the port using the PORT environment variable:
 
 ```sh
+# Optionally set PORT:
 PORT=5000 npm run start:dev
 ```
 
