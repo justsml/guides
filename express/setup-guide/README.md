@@ -43,11 +43,15 @@ You're now setup with 2 local scripts. Each time you want to create an app, run 
 # create a director, cd into it
 mkdir ~/my-app
 cd ~/my-app
-# Create the app.js
+
+# Create the app.js (once)
 ~/express-setup.sh
-# Add a route
+# Add a route (as many times as needed)
 ~/express-create-route.sh
 ```
+
+##### :tada: you're done!
+
 
 ### Instructions
 
@@ -89,9 +93,9 @@ Copy & Paste a router template into your router `.js` files...
 
 ##### 3c. Copy router template (by database/storage tech):
 
-1. [Postgres/Knex](./routes/rest-with-knex.js)
-1. [MongoDB/Monk](./routes/rest-mongodb-with-monk.js)
-1. [In-memory array (testing)](./routes/rest-arrays-template.js)
+1. [Postgres/Knex](./routes/template-mongodb-knex.js)
+1. [MongoDB/Monk](./routes/template-mongodb-monk.js)
+1. [In-memory array (testing)](./routes/template-in-memory-array.js)
 
 Template will contain a placeholder variable `items` - search & replace using the route (table or model) name.
 
@@ -109,10 +113,20 @@ app.use('/api/cat', require('./routes/cat'))
 app.use('/api/dog', require('./routes/dog'))
 ```
 
+Or with ES6 Modules:
+
+```js
+import cat from './routes/cat'
+import dog from './routes/dog'
+
+// custom routes go after cors, logging, auth, etc. middleware:
+app.use('/api/cat', cat)
+app.use('/api/dog', dog)
+```
 
 ### IMPORTANT:
 
-It is critical routes are added before the '*notFound*' handler `app.use(notFound)`.
+It is critical your custom routes are followed by the '*notFound*' handler `app.use(notFound)` and '*errorHandler*'.
 
 
 ## Up and Running
@@ -120,20 +134,29 @@ It is critical routes are added before the '*notFound*' handler `app.use(notFoun
 Add a `start` script to your `package.json`:
 
 ```js
-  "start": "nodemon app.js"
+  "start": "node app.js",
+  "start:dev": "nodemon app.js"
 ```
 
-Or start the server via terminal:
+Then start the server via terminal:
 
 ```sh
-node app.js
+npm start
+# Or
+npm run start:dev
 ```
 
 ## Verify Server
 
 Server will print the port it's listening on (default is 3000).
 
-Use browser or Postman to GET [http://localhost:3000/api/cat](http://localhost:3000/api/cat)
+Override the port using the PORT environment variable:
+
+```sh
+PORT=5000 npm run start:dev
+```
+
+Use your browser or Postman to GET [http://localhost:3000/api/cat](http://localhost:3000/api/cat)
 
 You should see a corresponding `GET` or `200` status code in the terminal window running your server.
 
