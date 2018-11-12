@@ -24,7 +24,14 @@ npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-pr
 
 ## 2. Setup Config File(s)
 
-Instead of running `eslint --init`, I recommend copying the [sample `.eslintrc` file](#sample-eslintrc) into your `$HOME` folder.
+Instead of running `eslint --init`, I recommend copy and pasting the sample `.eslintrc` file manually. The instructions are below: 
+
+* `cd ~`
+* `touch .eslintrc` 
+* Open `.eslintrc` with your text editor
+* Copy and paste [sample `.eslintrc` file](#sample-eslintrc) into the file
+* Save the file
+* Make sure it copied properly: `cat .eslintrc` 
 
 To configure per project, copy the [`.eslintrc` file](#sample-eslintrc) into the project's root folder.
 
