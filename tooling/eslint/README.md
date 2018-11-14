@@ -26,7 +26,7 @@ npm install --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-pr
 
 Instead of running `eslint --init`, I recommend copy and pasting the sample `.eslintrc` file manually. The instructions are below: 
 
-* `cd ~`
+* `cd <your-project-folder>`
 * `touch .eslintrc` 
 * Open `.eslintrc` with your text editor
 * Copy and paste [sample `.eslintrc` file](#sample-eslintrc) into the file
