@@ -18,8 +18,21 @@ router.delete('/:id', remove)
 // IMPORTANT: Don't forget data validation, restrictions
 // - use mongoose, Joi, bookshelf, *schema lib, etc.
 
+function getQueryOptions({ skip = 0, limit = 20, orderBy = '-id'}) {
+  skip    = Math.abs(parseInt(skip, null))
+  limit   = Math.abs(parseInt(limit, null))
+  skip    = skip > 100000 ? 100000
+  limit   = limit > 100 ? 100 : limit 
+  orderBy = orderBy && orderBy.length > 25 ? '_id' : orderBy
+  return {skip, limit, orderBy}
+}
+
 function getAll(req, res, next) {
-  items.find({})
+  const {skip, limit, orderBy} = getQueryOptions(req.query)
+  
+  items.find({}, orderBy)
+    .skip(skip)
+    .limit(limit)
     .then(items => res.status(200).send({data: items}))
     .catch(next)
 }
