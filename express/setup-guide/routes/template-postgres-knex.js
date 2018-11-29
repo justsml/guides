@@ -19,20 +19,26 @@ router.delete('/:id', remove)
 
 // OPTIONAL/TODO: Move `getQueryOptions` into some shared js file
 function getQueryOptions(query) {
-  let {offset, limit} = query
-  offset  = parseInt(offset, null)
-  limit   = parseInt(limit, null)
-  offset  = offset > 2000 ? 2000 : offset
-  limit   = limit > 50 ? 50 : limit
-  return {offset, limit}
+  let {
+    offset = 0, 
+    limit = 20, 
+    orderBy = '-id'
+  } = query
+  offset  = Math.abs(parseInt(offset, null))
+  limit   = Math.abs(parseInt(limit, null))
+  orderBy = orderBy[0] === '-' ? [orderBy.slice(1), 'desc'] : [orderBy, 'asc']
+  offset  = offset > 100000 ? 100000 
+  limit   = limit > 100 ? 100 : limit 
+  return {offset, limit, orderBy}
 }
 
 function getAll(req, res, next) {
-  const {limit, offset} = getQueryOptions(req.query)
+  const {limit, offset, orderBy} = getQueryOptions(req.query)
   knex('items')
     .select('*')
     .limit(limit)
     .offset(offset)
+    .orderBy(...orderBy)
     .then(items => res.status(200).send({data: items}))
     .catch(next)
 }
