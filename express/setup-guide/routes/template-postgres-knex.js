@@ -27,7 +27,7 @@ function getQueryOptions(query) {
   offset  = Math.abs(parseInt(offset, null))
   limit   = Math.abs(parseInt(limit, null))
   orderBy = orderBy[0] === '-' ? [orderBy.slice(1), 'desc'] : [orderBy, 'asc']
-  offset  = offset > 100000 ? 100000 
+  offset  = offset > 100000 ? 100000 : offset
   limit   = limit > 100 ? 100 : limit 
   return {offset, limit, orderBy}
 }
