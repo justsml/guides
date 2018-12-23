@@ -21,7 +21,7 @@ router.delete('/:id', remove)
 function getQueryOptions({ skip = 0, limit = 20, orderBy = '-id'}) {
   skip    = Math.abs(parseInt(skip, null))
   limit   = Math.abs(parseInt(limit, null))
-  skip    = skip > 100000 ? 100000
+  skip    = skip > 100000 ? 100000 : skip
   limit   = limit > 100 ? 100 : limit 
   orderBy = orderBy && orderBy.length > 25 ? '_id' : orderBy
   return {skip, limit, orderBy}
