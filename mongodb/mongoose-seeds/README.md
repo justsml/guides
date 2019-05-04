@@ -50,7 +50,7 @@ const Article  = mongoose.model('Article');
 const techId = ObjectId()
 
 const data = {
-  categories: [{_id: techId, name: 'Tech'}]
+  categories: [{_id: techId, name: 'Tech'}],
   articles: [{title: 'Blah blah bitcoin', category: techId}]
 }
 
