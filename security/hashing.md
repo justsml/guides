@@ -1,9 +1,10 @@
 # Intro to Hashing 
-## and Password Security
+
+> ... and it's relationship to Password Security.
 
 ## Overview
 
-
+_TODO: add intro..._
 
 ## Collisions
 
