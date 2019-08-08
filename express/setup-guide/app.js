@@ -1,12 +1,14 @@
 // From Dan's Guides: https://github.com/justsml/guides/tree/master/express/setup-guide
 // TODO: INSTALL PRE-REQS:
-//  npm install express cors morgan nodemon
+//  npm install express cors morgan helmet nodemon
 const express     = require('express')
 const morgan      = require('morgan')
+const helmet      = require('helmet')
 const cors        = require('cors')
 const app         = module.exports = express()
 const port        = parseInt(process.env.PORT || 3000)
 
+app.use(helmet())
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
