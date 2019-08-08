@@ -1,15 +1,14 @@
 // From Dan's Guides: https://github.com/justsml/guides/tree/master/express/setup-guide
 // TODO: INSTALL PRE-REQS:
-//  npm install express cors body-parser morgan nodemon
+//  npm install express cors morgan nodemon
 const express     = require('express')
-const bodyParser  = require('body-parser')
 const morgan      = require('morgan')
 const cors        = require('cors')
 const app         = module.exports = express()
 const port        = parseInt(process.env.PORT || 3000)
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
 app.use(cors({origin: true, credentials: true})) // <= Disable if you don't need CORS
 // TODO: Optional Static file handler:
