@@ -13,7 +13,7 @@
 docker run -d \
   --name mongodb \
   -p 127.0.0.1:27017:27017 \
-  mongo:3 bash -c 'mongod --logappend --storageEngine=wiredTiger'
+  mongo:3 bash -c 'mongod --bind_ip 0.0.0.0 --logappend --storageEngine=wiredTiger'
 ```
 
 #### Keep data in 'mounted volume/path' at `$HOME/mongodb`
@@ -25,7 +25,7 @@ docker run -d \
   --restart on-failure:15 \
   -p 127.0.0.1:27017:27017 \
   -v $HOME/mongodb:/data \
-  mongo:3 bash -c 'mongod --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
+  mongo:4 bash -c 'mongod --bind_ip 0.0.0.0 --logpath /data/mongodb.log --logappend --dbpath /data/data --storageEngine=wiredTiger'
 ```
 
 ## Postgres
@@ -42,7 +42,7 @@ docker run -d \
   -e PGDATA=/var/lib/postgresql/data/db \
   -e POSTGRES_USER=$USER \
   -e POSTGRES_DB=$USER \
-  -e POSTGRES_INITDB_ARGS="--data-checksums" \
+  -e POSTGRES_INITDB_ARGS="--data-checksums -h '0.0.0.0'" \
   postgres:9.6-alpine
 ```
 
