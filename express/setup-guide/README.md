@@ -93,7 +93,7 @@ Copy & Paste a router template into your router `.js` files...
 
 ##### 3c. Copy router template (by database/storage tech):
 
-1. [Postgres/Knex](./routes/template-mongodb-knex.js)
+1. [Postgres/Knex](./routes/template-postgres-knex.js)
 1. [MongoDB/Monk](./routes/template-mongodb-monk.js)
 1. [In-memory array (testing)](./routes/template-in-memory-array.js)
 
