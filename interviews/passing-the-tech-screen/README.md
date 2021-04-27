@@ -50,17 +50,23 @@
 
 ## React:
 
-1. What is one lifecycle hook that is in every class component?
-1. Name as many lifecycle hooks as you can?
-    1. Bonus: Name the deprecated hooks.
-1. What is the difference between state and props?
-1. Can you set state more than once?
-1. How does React use the virtual DOM?
-1. What are the pros/cons w/ `css-in-js`?
-1. Why do we typically need to use babel?
-1. When would you use Redux and `this.setState({...})`?
-1. What problem(s) does `Redux` solve?
-1. What is the Context API?
+1. What are some of React's benefits and trade-offs?
+2. What is one lifecycle method that is in every class component?
+3. How many lifecycle methods can you name?
+    1. **Bonus:** Draw the execution order/flow between methods.
+    1. **Bonus:** Describe any deprecated methods.
+4. What is the difference between state and props? Draw an example.
+5. Can you set a component's props inside itself?
+6. What are React Hooks?
+7. What React Hook must you use for AJAX requests?
+8. What is the virtual DOM? How does React use it?
+9. What are the pros/cons w/ `css-in-js`?
+10. Why do we need babel?
+11. Why do we need webpack?
+12. When would you use Redux versus `this.setState({...})`?
+13. What problem(s) does `Redux` aim to solve? And what issues does it possibly create?
+14. What is the Context API?
+15. Describe how to share data between components. **Bonus:** Include all methods you can imagine.
 
 ## Vue.JS:
 
