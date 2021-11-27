@@ -1,5 +1,5 @@
 // From Dan's Guides: https://github.com/justsml/guides/tree/master/express/setup-guide
-// TODO: INSTALL PRE-REQS:
+// TODO: INSTALL PRE-REQUISITES:
 //  npm install express cors morgan helmet nodemon
 const express     = require('express')
 const morgan      = require('morgan')
