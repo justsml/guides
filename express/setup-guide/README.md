@@ -1,5 +1,6 @@
 # Quickly Setup an Express Server
-## In only 3 steps!
+
+## NEW: [View the TypeScript & Knex Example](../knex-typescript)
 
 ### What's included?
 

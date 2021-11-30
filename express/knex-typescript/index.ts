@@ -1,6 +1,4 @@
-/* credit: https://github.com/justsml/guides/tree/master/express/setup-guide
-
-install: `npm install express cors morgan helmet nodemon @types/express @types/node`  */
+/* credit: https://github.com/justsml/guides/tree/master/express/setup-guide */
 import app from './app';
 
 const port = parseInt(process.env.PORT || '3000')
