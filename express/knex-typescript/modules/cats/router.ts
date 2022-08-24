@@ -7,8 +7,8 @@ const router = express.Router();
 
 export default router
   .get("/", getAll)
-  .get("/:id", getById)
   .post("/", create)
+  .get("/:id", getById)
   .put("/:id", update)
   .delete("/:id", remove);
 
